@@ -1,0 +1,43 @@
+<div class="body">
+    <div id="content">
+        <div>
+            <ul>
+                {{#each recipes}} 
+                {{#if order}}
+                <li>
+                    <a href="/recipes/{{dataValues.id}}"><img src="{{dataValues.smallImagePath}}" alt="Image"></a>
+                    <div>
+                        <h3><a href="/recipes/{{dataValues.id}}">{{dataValues.title}}</a></h3>
+                        <div>
+                            <p>
+                                {{dataValues.summary}}
+                            </p>
+                            <ul>
+                                {{#each Ingredients}}
+                                <li>
+                                    {{dataValues.quality}} {{dataValues.title}}
+                                </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                {{else}}
+                <li>
+                    <a href="/recipes/{{dataValues.id}}"><img src="{{dataValues.smallImagePath}}" alt="Image"></a>
+                    <div>
+                        <h3><a href="/recipes/{{dataValues.id}}">{{dataValues.title}}</a></h3>
+                        <div>
+                            <p>
+                                {{dataValues.summary}}
+                            </p>
+                            
+                        </div>
+                    </div>
+                </li>
+                {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</div>
